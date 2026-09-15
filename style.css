@@ -1,0 +1,695 @@
+/* ========================================
+   ОСНОВНЫЕ НАСТРОЙКИ
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #202938;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    width: 100%;
+
+    min-height: 125px;
+
+    background: linear-gradient(
+        135deg,
+        #172554,
+        #2563eb
+    );
+
+    color: white;
+
+    padding: 20px 5%;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    min-height: 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-text h1 {
+    margin: 0 0 10px;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+.header-text p {
+    margin: 0;
+
+    font-size: 16px;
+
+    opacity: 0.85;
+}
+
+.header-image {
+    width: 190px;
+    height: 85px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    border: 3px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   ОСНОВНАЯ СЕТКА
+======================================== */
+
+.layout {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 3fr)
+        170px
+        210px;
+
+    min-height: 600px;
+
+    padding: 25px;
+
+    gap: 18px;
+}
+
+
+/* ========================================
+   ARTICLE
+======================================== */
+
+.article {
+    background: white;
+
+    padding: 35px 40px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e5eaf2;
+
+    box-shadow:
+        0 5px 25px rgba(30, 50, 80, 0.08);
+}
+
+.article h2 {
+    margin: 0 0 30px;
+
+    color: #172554;
+
+    font-size: 24px;
+}
+
+.article h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    background: #2563eb;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+}
+
+
+/* ========================================
+   ФОРМА
+======================================== */
+
+#surveyForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group > label {
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+/* ========================================
+   ОБЫЧНЫЕ ПОЛЯ INPUT
+======================================== */
+
+input[type="text"],
+input[type="week"],
+select {
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 46px;
+
+    padding: 10px 14px;
+
+    border: 1px solid #d5dce8;
+
+    border-radius: 9px;
+
+    background: #f9fbfd;
+
+    color: #202938;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+input[type="text"]:hover,
+input[type="week"]:hover,
+select:hover {
+    border-color: #9bb7e8;
+}
+
+input[type="text"]:focus,
+input[type="week"]:focus,
+select:focus {
+    outline: none;
+
+    background: white;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* ========================================
+   ПОЛЕ "НЕДЕЛЯ"
+======================================== */
+
+.week-input-wrapper {
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+}
+
+.week-input-wrapper input[type="week"] {
+    width: 100%;
+
+    color: transparent;
+
+    caret-color: transparent;
+}
+
+
+/*
+    Скрываем стандартное отображение
+    даты/недели в Chrome и Edge
+*/
+
+.week-input-wrapper
+input[type="week"]::-webkit-datetime-edit {
+    color: transparent;
+}
+
+.week-input-wrapper
+input[type="week"]::-webkit-datetime-edit-fields-wrapper {
+    color: transparent;
+}
+
+.week-input-wrapper
+input[type="week"]::-webkit-datetime-edit-text {
+    color: transparent;
+}
+
+.week-input-wrapper
+input[type="week"]::-webkit-datetime-edit-month-field {
+    color: transparent;
+}
+
+.week-input-wrapper
+input[type="week"]::-webkit-datetime-edit-week-field {
+    color: transparent;
+}
+
+.week-input-wrapper
+input[type="week"]::-webkit-datetime-edit-year-field {
+    color: transparent;
+}
+
+
+/*
+    Наш собственный текст
+*/
+
+#weekPlaceholder {
+    position: absolute;
+
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #374151;
+
+    font-size: 15px;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   FIELDSET
+======================================== */
+
+fieldset {
+    max-width: 650px;
+
+    border: 1px solid #e0e6ef;
+
+    border-radius: 12px;
+
+    padding: 18px 20px;
+
+    background: #fafcff;
+}
+
+legend {
+    padding: 0 8px;
+
+    color: #172554;
+
+    font-weight: 700;
+}
+
+fieldset label {
+    display: block;
+
+    margin: 10px 0;
+
+    font-weight: normal;
+
+    color: #4b5563;
+
+    cursor: pointer;
+}
+
+fieldset input {
+    margin-right: 8px;
+
+    accent-color: #2563eb;
+}
+
+
+/* ========================================
+   RANGE
+======================================== */
+
+.range-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    max-width: 600px;
+}
+
+input[type="range"] {
+    flex: 1;
+
+    accent-color: #2563eb;
+
+    cursor: pointer;
+}
+
+#ratingValue {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+
+/* ========================================
+   COLOR
+======================================== */
+
+input[type="color"] {
+    width: 65px;
+    height: 42px;
+
+    padding: 3px;
+
+    border: 1px solid #d5dce8;
+
+    border-radius: 9px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   КНОПКИ
+======================================== */
+
+.buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 8px;
+
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    border: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+button[type="reset"] {
+    background: #eef2f7;
+
+    color: #374151;
+}
+
+button[type="button"] {
+    background: #2563eb;
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.25);
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button[type="reset"]:hover {
+    background: #e1e7ef;
+}
+
+button[type="button"]:hover {
+    background: #1d4ed8;
+
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   NAV
+======================================== */
+
+.nav {
+    background: #172554;
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 25px 18px;
+
+    box-shadow:
+        0 5px 25px rgba(30, 50, 80, 0.12);
+}
+
+.nav h3 {
+    margin: 0 0 22px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.nav a {
+    display: block;
+
+    padding: 11px 10px;
+
+    margin-bottom: 7px;
+
+    border-radius: 8px;
+
+    color: #e5edff;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s,
+        padding-left 0.2s;
+}
+
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    padding-left: 15px;
+}
+
+
+/* ========================================
+   ASIDE
+======================================== */
+
+.aside {
+    background: white;
+
+    color: #374151;
+
+    border-radius: 18px;
+
+    padding: 25px 22px;
+
+    border: 1px solid #e5eaf2;
+
+    box-shadow:
+        0 5px 25px rgba(30, 50, 80, 0.08);
+}
+
+.aside h3 {
+    margin: 0 0 18px;
+
+    color: #172554;
+
+    font-size: 19px;
+}
+
+.aside h4 {
+    margin: 25px 0 10px;
+
+    color: #2563eb;
+}
+
+.aside p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 0 0 14px;
+}
+
+.aside ul {
+    padding-left: 18px;
+
+    margin-top: 10px;
+}
+
+.aside li {
+    font-size: 14px;
+
+    margin-bottom: 9px;
+
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    width: 100%;
+
+    min-height: 90px;
+
+    background: #172554;
+
+    color: #dbe5ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.footer p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   АДАПТИВНОСТЬ
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .layout {
+        grid-template-columns:
+            minmax(0, 1fr)
+            150px
+            180px;
+    }
+
+    .article {
+        padding: 28px;
+    }
+
+    .header-text h1 {
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .header {
+        padding: 20px;
+    }
+
+    .header-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .header-image {
+        width: 100%;
+
+        height: 120px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+
+        padding: 15px;
+    }
+
+    .nav,
+    .aside {
+        min-height: auto;
+    }
+
+    .article {
+        padding: 25px 20px;
+    }
+}

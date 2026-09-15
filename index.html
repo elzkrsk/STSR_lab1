@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Опрос посетителей выставки смартфонов</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+    <div class="header-content">
+
+        <div class="header-text">
+            <h1>Опрос посетителей выставки смартфонов</h1>
+            <p>Поделитесь своими впечатлениями о выставке</p>
+        </div>
+
+        <img
+            src="image/smart.jpg"
+            alt="Современный смартфон"
+            class="header-image"
+        >
+
+    </div>
+
+</header>
+
+
+    <!-- ОСНОВНАЯ ОБЛАСТЬ -->
+    <div class="layout">
+
+        <!-- ARTICLE -->
+        <article class="article">
+
+            <h2>Поделитесь своими впечатлениями</h2>
+
+            <form id="surveyForm">
+
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Введите ваше имя"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="week">
+                        Неделя посещения выставки:
+                    </label>
+
+                    <div class="week-input-wrapper">
+
+    <input
+        type="week"
+        id="week"
+        name="week"
+        required
+    >
+
+    <span id="weekPlaceholder">
+        Выберите неделю
+    </span>
+
+</div>
+
+
+                <fieldset class="form-group">
+
+                    <legend>
+                        Что вам понравилось на выставке?
+                    </legend>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="Новые смартфоны"
+                        >
+                        Новые смартфоны
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="Технологии"
+                        >
+                        Новые технологии
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="Дизайн"
+                        >
+                        Дизайн смартфонов
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="interests"
+                            value="Аксессуары"
+                        >
+                        Аксессуары
+                    </label>
+
+                </fieldset>
+
+
+                <div class="form-group">
+
+                    <label for="brand">
+                        Какой бренд смартфонов вам понравился больше?
+                    </label>
+
+                    <select
+                        id="brand"
+                        name="brand"
+                        required
+                    >
+                        <option value="">
+                            Выберите бренд
+                        </option>
+
+                        <option value="Apple">
+                            Apple
+                        </option>
+
+                        <option value="Samsung">
+                            Samsung
+                        </option>
+
+                        <option value="Xiaomi">
+                            Xiaomi
+                        </option>
+
+                        <option value="Google">
+                            Google
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <fieldset class="form-group">
+
+                    <legend>
+                        Посоветуете ли вы посетить выставку?
+                    </legend>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="recommend"
+                            value="Да"
+                            required
+                        >
+                        Да
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="recommend"
+                            value="Нет"
+                        >
+                        Нет
+                    </label>
+
+                </fieldset>
+
+
+                <div class="form-group">
+
+                    <label for="rating">
+                        Оцените выставку от 1 до 10:
+                    </label>
+
+                    <div class="range-row">
+
+                        <input
+                            type="range"
+                            id="rating"
+                            name="rating"
+                            min="1"
+                            max="10"
+                            value="5"
+                        >
+
+                        <span id="ratingValue">5</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="color">
+                        Выберите любимый цвет смартфона:
+                    </label>
+
+                    <input
+                        type="color"
+                        id="color"
+                        name="color"
+                        value="#000000"
+                    >
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button type="reset">
+                        Очистить содержимое
+                    </button>
+
+                    <button
+                        type="button"
+                        id="resultButton"
+                    >
+                        Посмотреть результаты
+                    </button>
+
+                </div>
+
+            </form>
+
+        </article>
+
+
+        <!-- NAV -->
+        <nav class="nav">
+
+            <a href="#">Главная</a>
+            <a href="#">О выставке</a>
+            <a href="#">Смартфоны</a>
+        </nav>
+
+<aside class="aside">
+
+    <h3>О выставке</h3>
+
+    <p>
+        Выставка смартфонов знакомит посетителей
+        с современными мобильными устройствами
+        и новыми технологиями.
+    </p>
+
+    <p>
+        На выставке представлены смартфоны
+        различных производителей, новые модели,
+        аксессуары и инновационные разработки.
+    </p>
+
+    <h4>Что можно узнать?</h4>
+
+    <ul>
+        <li>Новые модели смартфонов</li>
+        <li>Современные технологии</li>
+        <li>Особенности дизайна</li>
+        <li>Популярные бренды</li>
+        <li>Новые аксессуары</li>
+    </ul>
+
+</aside>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
