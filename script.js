@@ -636,3 +636,4 @@ resultButton.addEventListener("click", function () {
     resultWindow.document.close();
 
 });
+[yt[rpthrothk
